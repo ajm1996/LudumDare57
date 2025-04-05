@@ -14,6 +14,10 @@ public class PlayerMining : MonoBehaviour
     private bool isMining = false;
     private Vector3 miningDirection;
     private Camera mainCamera;
+    private bool isHoldingMouse = false;
+    private float mouseDownTime;
+    [SerializeField] private float longPressThreshold = 0.3f; // Time in seconds to consider a press as "long"
+    private bool wasLongPress = false;
 
     void Start()
     {
@@ -26,15 +30,51 @@ public class PlayerMining : MonoBehaviour
     {
         fossilFuelLevel -= 2 * Time.deltaTime;
 
+        // Check for click vs. hold
         if (Input.GetMouseButtonDown(0))
         {
-            isMining = !isMining;
-            if (isMining)
+            isHoldingMouse = true;
+            mouseDownTime = Time.time;
+            wasLongPress = false;
+            
+            // Don't immediately set isMining = true
+            // Instead, capture the current direction if we're going to start mining
+            if (!isMining)
             {
-                Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                mouseWorldPos.z = transform.position.z;
-                miningDirection = (mouseWorldPos - transform.position).normalized;
+                UpdateMiningDirection();
             }
+        }
+        
+        if (Input.GetMouseButtonUp(0))
+        {
+            // Determine if this was a long press
+            wasLongPress = Time.time - mouseDownTime >= longPressThreshold;
+            isHoldingMouse = false;
+            
+            if (wasLongPress)
+            {
+                // Stop mining if this was a long press
+                isMining = false;
+            }
+            else
+            {
+                // It was a quick tap, so toggle mining
+                isMining = !isMining;
+                
+                // If we just started mining, update the direction
+                if (isMining)
+                {
+                    UpdateMiningDirection();
+                }
+            }
+        }
+        
+        // If holding the mouse button, continuously update the direction and ensure mining is active
+        if (isHoldingMouse && Time.time - mouseDownTime >= longPressThreshold)
+        {
+            wasLongPress = true;
+            isMining = true;
+            UpdateMiningDirection();
         }
 
         if (isMining && Time.time >= lastMineTime + mineCooldown)
@@ -61,6 +101,13 @@ public class PlayerMining : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void UpdateMiningDirection()
+    {
+        Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = transform.position.z;
+        miningDirection = (mouseWorldPos - transform.position).normalized;
     }
 
     private IEnumerator DestroyAfterDelay(GameObject obj)

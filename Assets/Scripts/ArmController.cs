@@ -10,10 +10,14 @@ public class ArmController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private MouseButton freezeButton = MouseButton.Left; // Which mouse button freezes this arm
     [SerializeField] private float rotationSpeed = 10f; // How quickly the arm rotates to aim at cursor
+    [SerializeField] private float longPressThreshold = 0.3f; // Time in seconds to consider a press as "long"
     
     // Current state
     private bool isFrozen = false;
     private Vector3 frozenDirection;
+    private bool isHoldingMouse = false;
+    private float mouseDownTime;
+    private bool wasLongPress = false;
     
     // Define an enum for mouse buttons (makes it easy to configure in inspector)
     public enum MouseButton
@@ -36,25 +40,78 @@ public class ArmController : MonoBehaviour
     
     private void Update()
     {
-        // Check for freeze/unfreeze input
-        if (Input.GetMouseButtonDown((int)freezeButton))
-        {
-            isFrozen = !isFrozen; // Toggle frozen state
-            
-            if (isFrozen)
+        if (freezeButton == MouseButton.Left) {
+            // Check for mouse button down
+            if (Input.GetMouseButtonDown((int)freezeButton))
             {
-                // Store current direction when freezing
-                frozenDirection = GetAimDirection();
+                isHoldingMouse = true;
+                mouseDownTime = Time.time;
+                wasLongPress = false;
+                
+                // Don't immediately change frozen state
+                // If we're going to freeze, capture the current direction
+                if (!isFrozen)
+                {
+                    frozenDirection = GetAimDirection();
+                }
             }
+            
+            // Check for mouse button up
+            if (Input.GetMouseButtonUp((int)freezeButton))
+            {
+                // Determine if this was a long press
+                wasLongPress = Time.time - mouseDownTime >= longPressThreshold;
+                isHoldingMouse = false;
+                
+                if (wasLongPress)
+                {
+                    frozenDirection = GetAimDirection();
+                }
+                else
+                {
+                    // It was a quick tap, so toggle frozen state
+                    isFrozen = !isFrozen;
+                    
+                    if (isFrozen)
+                    {
+                        // Update frozen direction when freezing
+                        frozenDirection = GetAimDirection();
+                    }
+                }
+            }
+            
+            // If holding mouse past threshold, temporarily unfreeze to follow cursor
+            if (isHoldingMouse && Time.time - mouseDownTime >= longPressThreshold)
+            {
+                wasLongPress = true;
+                // Temporarily follow cursor while holding
+                UpdateArmRotation(false);
+            }
+            else //if (!wasLongPress)
+            {
+                // Normal update based on frozen state
+                UpdateArmRotation(isFrozen);
+            }
+        } else if (freezeButton == MouseButton.Right) {
+            if (Input.GetMouseButtonDown((int)freezeButton))
+            {
+                isFrozen = !isFrozen; // Toggle frozen state
+
+                if (isFrozen)
+                {
+                    // Store current direction when freezing
+                    frozenDirection = GetAimDirection();
+                }
+            }
+
+            // Update arm rotation
+            UpdateArmRotation(isFrozen);
         }
-        
-        // Update arm rotation
-        UpdateArmRotation();
     }
     
-    private void UpdateArmRotation()
+    private void UpdateArmRotation(bool useFrozenDirection)
     {
-        if (isFrozen)
+        if (useFrozenDirection)
         {
             // When frozen, maintain the saved direction
             float angle = Mathf.Atan2(frozenDirection.y, frozenDirection.x) * Mathf.Rad2Deg;

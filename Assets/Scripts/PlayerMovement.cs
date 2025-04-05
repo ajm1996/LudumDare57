@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         Jump();
         
         // Flip the player sprite based on movement direction
-        Flip();
+        //Flip();
     }
 
     private void CheckGrounded()
