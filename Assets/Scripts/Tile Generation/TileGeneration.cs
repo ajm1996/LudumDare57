@@ -6,13 +6,16 @@ public class TileGeneration : MonoBehaviour
     public static TileGeneration Instance;  // Singleton for easy access
 
     public GameObject chunkPrefab;
+    public GameObject fuelPrefab;
     public Camera mainCamera;
-    
+    public float fuelChance = 0.001f;
+
+    // These values are determined dynamically:
     private float chunkSize;    // World size of the chunk prefab.
     private float chunkWorldSize; // We'll set this equal to chunkSize.
     
     private HashSet<Vector2Int> spawnedChunkPositions = new HashSet<Vector2Int>();
-    private HashSet<Vector2Int> minedChunkPositions = new HashSet<Vector2Int>(); // New set for mined chunks
+    private HashSet<Vector2Int> minedChunkPositions = new HashSet<Vector2Int>(); // For mined chunks
     private Vector2Int lastCameraGridPosition;
 
     void Awake()
@@ -79,7 +82,7 @@ public class TileGeneration : MonoBehaviour
             for (int chunkY = minChunkY; chunkY <= maxChunkY; chunkY++)
             {
                 Vector2Int chunkGridPos = new Vector2Int(chunkX, chunkY);
-                // Only spawn if it's not already spawned and not marked as mined.
+                // Only spawn if not already spawned and not mined.
                 if (chunkY <= 0 && !spawnedChunkPositions.Contains(chunkGridPos) && !minedChunkPositions.Contains(chunkGridPos))
                 {
                     Vector3 spawnPos = new Vector3(
@@ -87,14 +90,27 @@ public class TileGeneration : MonoBehaviour
                         chunkY * chunkWorldSize,
                         0f
                     );
-                    GameObject chunk = Instantiate(chunkPrefab, spawnPos, Quaternion.identity);
+                    
+                    GameObject chunk;
+                    // 5% chance to be a fuel chunk:
+                    if (Random.value < fuelChance)
+                    {
+                        chunk = Instantiate(fuelPrefab, spawnPos, Quaternion.identity);
+                    }
+                    else
+                    {
+                        chunk = Instantiate(chunkPrefab, spawnPos, Quaternion.identity);
+                    }
+                    
                     chunk.transform.parent = transform;
     
-                    // Set the grid coordinate on the chunk so it can notify us on destruction.
+                    // Set the grid coordinate and fuel flag on the chunk's component.
                     Chunk chunkScript = chunk.GetComponent<Chunk>();
                     if (chunkScript != null)
                     {
                         chunkScript.gridPos = chunkGridPos;
+                        // If the prefab spawned was the fuelPrefab, mark it as fuel.
+                        chunkScript.isFuel = (chunk.CompareTag("Fuel")); // OR use another check if you set isFuel manually.
                     }
     
                     spawnedChunkPositions.Add(chunkGridPos);

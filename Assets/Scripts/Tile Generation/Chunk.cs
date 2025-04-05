@@ -3,15 +3,26 @@ using UnityEngine;
 public class Chunk : MonoBehaviour
 {
     public GameObject smallTilePrefab;
+    public bool isFuel = false;    // Mark this chunk as fuel in TileGeneration.
+    public float fuelAmount = .5f;
     private bool hasSubdivided = false;
-    public int gridSize = 10; // Or your desired subdivision count
-    public Vector2Int gridPos; // Assigned by TileGeneration
+    public int gridSize = 10;      // Number of subdivisions per side (for non-fuel chunks)
+    public Vector2Int gridPos;     // Assigned by TileGeneration.
 
     public void Subdivide()
     {
         if (hasSubdivided) return;
         hasSubdivided = true;
 
+        // If this is a fuel chunk, simply destroy it immediately.
+        if (isFuel)
+        {
+            FuelManager.Instance.AddFuel(fuelAmount);
+            Destroy(gameObject);
+            return;
+        }
+
+        // Regular chunk subdivision: subdivide into small rock tiles.
         float currentChunkSize = GetPrefabSize(gameObject);
         float smallTileSize = currentChunkSize / gridSize;
         Vector3 origin = transform.position - new Vector3(currentChunkSize / 2, currentChunkSize / 2, 0);
@@ -40,7 +51,7 @@ public class Chunk : MonoBehaviour
         return 1f;
     }
 
-    // Notify TileGeneration on destruction
+    // Notify TileGeneration when this chunk is destroyed.
     void OnDestroy()
     {
         if (TileGeneration.Instance != null)
