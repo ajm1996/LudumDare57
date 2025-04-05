@@ -33,8 +33,9 @@ public class TileGeneration : MonoBehaviour
         int gridWidth = Mathf.CeilToInt(cameraWidth / spacing);
         int gridHeight = Mathf.CeilToInt(cameraHeight / spacing);
 
-        // Calculate the starting position of the grid (center it)
-        Vector3 startPosition = mainCamera.transform.position - new Vector3(cameraWidth / 2f, cameraHeight / 2f, 0);
+        Vector3 camPos = mainCamera.transform.position;
+        camPos.z = 0f; // flatten to 2D
+        Vector3 startPosition = camPos - new Vector3(cameraWidth / 2f, cameraHeight / 2f, 0);
 
         // Adjust the startPosition to account for the spacing of the rocks.
         startPosition += new Vector3(spacing / 2f, spacing / 2f, 0);
