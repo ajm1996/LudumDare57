@@ -4,53 +4,53 @@ using System.Collections.Generic;
 public class TileGeneration : MonoBehaviour
 {
     public GameObject rockPrefab;
-    public Camera mainCamera; // Assign the main camera in the Inspector
-    public float spacing = 1.0f;
+    public Camera mainCamera;
+    private HashSet<Vector2Int> spawnedPositions = new HashSet<Vector2Int>();
+    private Vector2Int lastCameraGridPosition;
 
     void Start()
     {
-        GenerateGridBasedOnCamera();
+        if (mainCamera == null) mainCamera = Camera.main;
+        lastCameraGridPosition = Vector2Int.FloorToInt(mainCamera.transform.position);
+        GenerateGridAroundCamera();
     }
 
-    void GenerateGridBasedOnCamera()
+    void Update()
     {
-        if (rockPrefab == null)
+        Vector2Int currentCameraGridPos = Vector2Int.FloorToInt(mainCamera.transform.position);
+        if (currentCameraGridPos != lastCameraGridPosition)
         {
-            Debug.LogError("Rock prefab is not assigned!");
-            return;
+            GenerateGridAroundCamera();
+            lastCameraGridPosition = currentCameraGridPos;
         }
+    }
 
-        if (mainCamera == null)
-        {
-            Debug.LogError("Main Camera is not assigned!");
-            return;
-        }
+    void GenerateGridAroundCamera()
+    {
+        if (rockPrefab == null || mainCamera == null) return;
 
-        // Calculate grid dimensions based on camera size
+        // Calculate the visible area in grid coordinates
         float cameraHeight = 2f * mainCamera.orthographicSize;
         float cameraWidth = cameraHeight * mainCamera.aspect;
+        Vector2 camPos = mainCamera.transform.position;
+        
+        // Add some padding to prevent visible edges
+        int padding = 2;
+        int minX = Mathf.FloorToInt(camPos.x - (cameraWidth/2)) - padding;
+        int maxX = Mathf.CeilToInt(camPos.x + (cameraWidth/2)) + padding;
+        int minY = Mathf.FloorToInt(camPos.y - (cameraHeight/2)) - padding;
+        int maxY = Mathf.CeilToInt(camPos.y + (cameraHeight/2)) + padding;
 
-        int gridWidth = Mathf.CeilToInt(cameraWidth / spacing);
-        int gridHeight = Mathf.CeilToInt(cameraHeight / spacing);
-
-        Vector3 camPos = mainCamera.transform.position;
-        camPos.z = 0f; // flatten to 2D
-        Vector3 startPosition = camPos - new Vector3(cameraWidth / 2f, cameraHeight / 2f, 0);
-
-        // Adjust the startPosition to account for the spacing of the rocks.
-        startPosition += new Vector3(spacing / 2f, spacing / 2f, 0);
-
-        for (int x = 0; x < gridWidth; x++)
+        for (int x = minX; x <= maxX; x++)
         {
-            for (int y = 0; y < gridHeight; y++)
+            for (int y = minY; y <= maxY; y++)
             {
-                Vector3 position = startPosition + new Vector3(x * spacing, y * spacing, 0);
-                
-                // Only spawn rocks if y position is less than or equal to 0
-                if (position.y <= 0)
+                Vector2Int gridPos = new Vector2Int(x, y);
+                if (y <= 0 && !spawnedPositions.Contains(gridPos))
                 {
-                    GameObject rock = Instantiate(rockPrefab, position, Quaternion.identity);
+                    GameObject rock = Instantiate(rockPrefab, new Vector3(x, y, 0), Quaternion.identity);
                     rock.transform.parent = transform;
+                    spawnedPositions.Add(gridPos);
                 }
             }
         }
@@ -58,6 +58,7 @@ public class TileGeneration : MonoBehaviour
 
     public void ClearGrid()
     {
+        spawnedPositions.Clear();
         foreach (Transform child in transform)
         {
             if (child != transform)
