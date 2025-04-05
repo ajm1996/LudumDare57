@@ -48,7 +48,7 @@ public class PlayerMining : MonoBehaviour
             int processedTargets = 0;
             foreach (RaycastHit2D hit in hits)
             {
-                if (processedTargets >= 3) break;
+                if (processedTargets >= 10) break;
                 
                 if (hit.collider != null && hit.collider.CompareTag("Breakable"))
                 {
