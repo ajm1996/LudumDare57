@@ -449,9 +449,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 6154851928566309197, guid: 029d7eb39aefe17438aadbc064ffd072, type: 3}
+  fuelPrefab: {fileID: 6154851928566309197, guid: 830c96c45206c1243b7def846e9d42d6, type: 3}
   mainCamera: {fileID: 519420031}
-  chunkSize: 5
-  tileSize: 1
+  fuelChance: 0.001
 --- !u!4 &1740549938
 Transform:
   m_ObjectHideFlags: 0
