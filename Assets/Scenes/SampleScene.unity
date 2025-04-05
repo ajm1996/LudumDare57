@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockPrefab: {fileID: 4208564745125425696, guid: 7a802ab6e4e33ca44ada42d96bfcc639, type: 3}
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 519420031}
 --- !u!4 &1740549938
 Transform:
   m_ObjectHideFlags: 0
