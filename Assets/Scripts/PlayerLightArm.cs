@@ -27,7 +27,6 @@ public class Light2DIntensityAndRadiusScroll : MonoBehaviour
     void Update()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0) print(scroll);
 
         if (Mathf.Abs(scroll) > 0.01f)
         {
