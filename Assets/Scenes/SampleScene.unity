@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0018293594, y: -1.2565408, z: -1.1111112}
+  m_LocalPosition: {x: -0.0018293594, y: -1.2565408, z: -2}
   m_LocalScale: {x: 0.11111112, y: 0.11111112, z: 0.11111112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -378,7 +378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -448,8 +448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26faf4ce8279ad146b0bf30c8f25a087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 4208564745125425696, guid: 7a802ab6e4e33ca44ada42d96bfcc639, type: 3}
+  chunkPrefab: {fileID: 6154851928566309197, guid: 029d7eb39aefe17438aadbc064ffd072, type: 3}
   mainCamera: {fileID: 519420031}
+  chunkSize: 5
+  tileSize: 1
 --- !u!4 &1740549938
 Transform:
   m_ObjectHideFlags: 0
@@ -459,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 1740549936}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.324557, y: -40.585087, z: -101.07047}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

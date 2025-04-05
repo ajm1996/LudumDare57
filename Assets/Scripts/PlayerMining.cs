@@ -6,9 +6,11 @@ public class PlayerMining : MonoBehaviour
 {
     [SerializeField] private float miningDistance = 5f;
     [SerializeField] private float miningWidth = 1f;  // Width of the mining area
+    [SerializeField] private float mineCooldown = 0.25f;
+    private float lastMineTime = -999f;
     public float health = 10f; //Just basic health amount
     public float fossilFuelLevel = 100f;
-    [SerializeField] private float timeToBreak = 0.5f;  // Time in seconds to break an object
+    [SerializeField] private float timeToBreak = 0.1f;  // Time in seconds to break an object
     private bool isMining = false;
     private Vector3 miningDirection;
     private Camera mainCamera;
@@ -75,8 +77,10 @@ public class PlayerMining : MonoBehaviour
             UpdateMiningDirection();
         }
 
-        if (isMining)
+        if (isMining && Time.time >= lastMineTime + mineCooldown)
         {
+            lastMineTime = Time.time;
+
             RaycastHit2D[] hits = Physics2D.BoxCastAll(
                 transform.position,
                 new Vector2(miningWidth, miningWidth),
@@ -89,7 +93,7 @@ public class PlayerMining : MonoBehaviour
             foreach (RaycastHit2D hit in hits)
             {
                 if (processedTargets >= 10) break;
-                
+
                 if (hit.collider != null && hit.collider.CompareTag("Breakable"))
                 {
                     StartCoroutine(DestroyAfterDelay(hit.collider.gameObject));
@@ -109,9 +113,18 @@ public class PlayerMining : MonoBehaviour
     private IEnumerator DestroyAfterDelay(GameObject obj)
     {
         yield return new WaitForSeconds(timeToBreak);
-        if (obj != null)  // Check if object still exists
+        if (obj != null)
         {
-            Destroy(obj);
+            // Check if the object is a chunk that should subdivide
+            Chunk chunk = obj.GetComponent<Chunk>();
+            if (chunk != null)
+            {
+                chunk.Subdivide();
+            }
+            else
+            {
+                Destroy(obj);
+            }
         }
     }
 
