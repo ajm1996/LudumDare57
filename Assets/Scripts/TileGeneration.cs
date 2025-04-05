@@ -45,8 +45,13 @@ public class TileGeneration : MonoBehaviour
             for (int y = 0; y < gridHeight; y++)
             {
                 Vector3 position = startPosition + new Vector3(x * spacing, y * spacing, 0);
-                GameObject rock = Instantiate(rockPrefab, position, Quaternion.identity);
-                rock.transform.parent = transform;
+                
+                // Only spawn rocks if y position is less than or equal to 0
+                if (position.y <= 0)
+                {
+                    GameObject rock = Instantiate(rockPrefab, position, Quaternion.identity);
+                    rock.transform.parent = transform;
+                }
             }
         }
     }

@@ -16,6 +16,8 @@ public class PlayerMining : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        // TODO: move this to player controls later
+        Physics2D.gravity = new Vector2(0, -25f); // higher grav accel to prevent "bouncy" look
     }
 
     void Update()
@@ -35,7 +37,7 @@ public class PlayerMining : MonoBehaviour
 
         if (isMining)
         {
-            RaycastHit2D hit = Physics2D.BoxCast(
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(
                 transform.position,
                 new Vector2(miningWidth, miningWidth),
                 0f,
@@ -43,11 +45,15 @@ public class PlayerMining : MonoBehaviour
                 miningDistance
             );
 
-            if (hit.collider != null)
+            int processedTargets = 0;
+            foreach (RaycastHit2D hit in hits)
             {
-                if (hit.collider.CompareTag("Breakable"))
+                if (processedTargets >= 3) break;
+                
+                if (hit.collider != null && hit.collider.CompareTag("Breakable"))
                 {
                     StartCoroutine(DestroyAfterDelay(hit.collider.gameObject));
+                    processedTargets++;
                 }
             }
         }

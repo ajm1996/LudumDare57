@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "LudumDare57.sln"
+    "dotnet.defaultSolution": "Ludum-Dare-57.sln"
 }
