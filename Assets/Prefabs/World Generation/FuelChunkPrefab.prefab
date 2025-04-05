@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1938347265834254603}
   - component: {fileID: -2343871222701904183}
   m_Layer: 0
-  m_Name: ChunkPrefab
+  m_Name: FuelChunkPrefab
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.2605903, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.047034025, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dbdfc5b12076041a758a287f7a7721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallTilePrefab: {fileID: 4208564745125425696, guid: 7a802ab6e4e33ca44ada42d96bfcc639, type: 3}
-  isFuel: 0
+  smallTilePrefab: {fileID: 6154851928566309197, guid: f8463cb92f5961941864ba031efa8119, type: 3}
+  isFuel: 1
   fuelAmount: 0.5
   gridSize: 6
   gridPos: {x: 0, y: 0}

@@ -3,16 +3,24 @@ using UnityEngine;
 
 public class FuelManager : MonoBehaviour
 {
+    public static FuelManager Instance;  // Singleton instance
 
     [SerializeField] public float fossilFuelLevel = 100f;
     [SerializeField] public float passiveFuelRate = 0.3f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    void Awake()
     {
-        
+        // Set up the singleton instance.
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         fossilFuelLevel -= passiveFuelRate * Time.deltaTime;
@@ -20,7 +28,8 @@ public class FuelManager : MonoBehaviour
 
     public void AddFuel(float fuelAmount)
     {
-        fuelAmount = Math.Min(fossilFuelLevel + fuelAmount, 100);
+        // Update fossilFuelLevel correctly
+        fossilFuelLevel = Math.Min(fossilFuelLevel + fuelAmount, 100);
     }
 
     public void RemoveFuel(float fuelAmount)
