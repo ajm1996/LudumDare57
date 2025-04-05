@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7116197561525967390}
   - component: {fileID: 5495218636702363063}
   - component: {fileID: -5513704273671091139}
+  - component: {fileID: -6441013026509004872}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -140,7 +141,6 @@ MonoBehaviour:
   miningWidth: 17
   mineCooldown: 0.1
   health: 10
-  fossilFuelLevel: 100
   timeToBreak: 0.001
   longPressThreshold: 0.3
 --- !u!61 &5495218636702363063
@@ -216,6 +216,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6441013026509004872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855206192709506753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb77116b46c95d844a77dbe21b65086d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fossilFuelLevel: 100
+  passiveFuelRate: 0.3
 --- !u!1001 &2584629324314987059
 PrefabInstance:
   m_ObjectHideFlags: 0

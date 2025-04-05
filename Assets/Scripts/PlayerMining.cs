@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using System.Collections;
 
@@ -9,7 +8,6 @@ public class PlayerMining : MonoBehaviour
     [SerializeField] private float mineCooldown = 0.25f;
     private float lastMineTime = -999f;
     public float health = 10f; //Just basic health amount
-    public float fossilFuelLevel = 100f;
     [SerializeField] private float timeToBreak = 0.1f;  // Time in seconds to break an object
     private bool isMining = false;
     private Vector3 miningDirection;
@@ -28,8 +26,6 @@ public class PlayerMining : MonoBehaviour
 
     void Update()
     {
-        fossilFuelLevel -= 2 * Time.deltaTime;
-
         // Check for click vs. hold
         if (Input.GetMouseButtonDown(0))
         {
@@ -126,10 +122,5 @@ public class PlayerMining : MonoBehaviour
                 Destroy(obj);
             }
         }
-    }
-
-    public void GatherFossilFuel(float fossilFuelAmount)
-    {
-        fossilFuelLevel = Math.Min(fossilFuelLevel + fossilFuelAmount, 100);
     }
 }
