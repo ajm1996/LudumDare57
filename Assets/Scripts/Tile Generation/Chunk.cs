@@ -2,27 +2,30 @@ using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
-    public GameObject smallTilePrefab;
-    public bool isFuel = false;    // Mark this chunk as fuel in TileGeneration.
-    public float fuelAmount = .5f;
+    public GameObject smallTilePrefab;  // For rock chunks
+    public GameObject smallFuelPrefab;  // For fuel chunks
+    public bool isFuel = false;         // Set this in TileGeneration.
+    public float fuelAmount = 0.5f;       // (Optional: amount of fuel provided per small fuel piece, or use later on collection)
+
+    public bool isSmallFuel = false;
     private bool hasSubdivided = false;
-    public int gridSize = 10;      // Number of subdivisions per side (for non-fuel chunks)
-    public Vector2Int gridPos;     // Assigned by TileGeneration.
+    public int gridSize = 10;           // Number of subdivisions per side
+    public Vector2Int gridPos;          // Assigned by TileGeneration.
 
     public void Subdivide()
     {
         if (hasSubdivided) return;
         hasSubdivided = true;
 
-        // If this is a fuel chunk, simply destroy it immediately.
-        if (isFuel)
-        {
+        if (isSmallFuel) {
             FuelManager.Instance.AddFuel(fuelAmount);
             Destroy(gameObject);
             return;
         }
+        // Remove the branch that instantly destroys fuel chunks.
+        // Instead, we subdivide using the correct prefab.
+        GameObject subdivisionPrefab = isFuel ? smallFuelPrefab : smallTilePrefab;
 
-        // Regular chunk subdivision: subdivide into small rock tiles.
         float currentChunkSize = GetPrefabSize(gameObject);
         float smallTileSize = currentChunkSize / gridSize;
         Vector3 origin = transform.position - new Vector3(currentChunkSize / 2, currentChunkSize / 2, 0);
@@ -33,7 +36,7 @@ public class Chunk : MonoBehaviour
             {
                 Vector3 offset = new Vector3(x * smallTileSize + smallTileSize / 2, y * smallTileSize + smallTileSize / 2, 0);
                 Vector3 spawnPos = origin + offset;
-                GameObject tile = Instantiate(smallTilePrefab, spawnPos, Quaternion.identity);
+                GameObject tile = Instantiate(subdivisionPrefab, spawnPos, Quaternion.identity);
                 tile.transform.localScale = Vector3.one * smallTileSize;
             }
         }

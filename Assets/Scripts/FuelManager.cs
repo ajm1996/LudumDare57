@@ -28,7 +28,6 @@ public class FuelManager : MonoBehaviour
 
     public void AddFuel(float fuelAmount)
     {
-        // Update fossilFuelLevel correctly
         fossilFuelLevel = Math.Min(fossilFuelLevel + fuelAmount, 100);
     }
 

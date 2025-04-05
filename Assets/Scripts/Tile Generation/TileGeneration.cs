@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class TileGeneration : MonoBehaviour
 {
-    public static TileGeneration Instance;  // Singleton for easy access
+    public static TileGeneration Instance;
 
     public GameObject chunkPrefab;
     public GameObject fuelPrefab;
@@ -11,8 +11,8 @@ public class TileGeneration : MonoBehaviour
     public float fuelChance = 0.001f;
 
     // These values are determined dynamically:
-    private float chunkSize;    // World size of the chunk prefab.
-    private float chunkWorldSize; // We'll set this equal to chunkSize.
+    private float chunkSize;
+    private float chunkWorldSize;
     
     private HashSet<Vector2Int> spawnedChunkPositions = new HashSet<Vector2Int>();
     private HashSet<Vector2Int> minedChunkPositions = new HashSet<Vector2Int>(); // For mined chunks
@@ -92,7 +92,7 @@ public class TileGeneration : MonoBehaviour
                     );
                     
                     GameObject chunk;
-                    // 5% chance to be a fuel chunk:
+
                     if (Random.value < fuelChance)
                     {
                         chunk = Instantiate(fuelPrefab, spawnPos, Quaternion.identity);
@@ -109,8 +109,6 @@ public class TileGeneration : MonoBehaviour
                     if (chunkScript != null)
                     {
                         chunkScript.gridPos = chunkGridPos;
-                        // If the prefab spawned was the fuelPrefab, mark it as fuel.
-                        chunkScript.isFuel = (chunk.CompareTag("Fuel")); // OR use another check if you set isFuel manually.
                     }
     
                     spawnedChunkPositions.Add(chunkGridPos);

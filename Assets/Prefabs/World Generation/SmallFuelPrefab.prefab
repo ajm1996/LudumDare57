@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5862435813635986822}
   - component: {fileID: 6397540132368038471}
   - component: {fileID: -1938347265834254603}
-  - component: {fileID: -2343871222701904183}
+  - component: {fileID: 3595983385938641950}
   m_Layer: 0
   m_Name: SmallFuelPrefab
   m_TagString: Breakable
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-2343871222701904183
+--- !u!114 &3595983385938641950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dbdfc5b12076041a758a287f7a7721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallTilePrefab: {fileID: 6154851928566309197}
+  smallTilePrefab: {fileID: 4208564745125425696, guid: 7a802ab6e4e33ca44ada42d96bfcc639, type: 3}
+  smallFuelPrefab: {fileID: 6154851928566309197}
   isFuel: 1
   fuelAmount: 0.5
-  gridSize: 6
+  isSmallFuel: 1
+  gridSize: 10
   gridPos: {x: 0, y: 0}
