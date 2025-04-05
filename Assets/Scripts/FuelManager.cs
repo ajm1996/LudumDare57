@@ -7,6 +7,8 @@ public class FuelManager : MonoBehaviour
 
     [SerializeField] public float fossilFuelLevel = 100f;
     [SerializeField] public float passiveFuelRate = 0.3f;
+    [SerializeField] public float maxFuelRate = 1f;
+    [SerializeField] public float minFuelRate = 0.1f;
 
     void Awake()
     {

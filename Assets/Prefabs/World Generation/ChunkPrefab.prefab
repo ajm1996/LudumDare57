@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.2605903, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.2627451, g: 0.2627451, b: 0.2627451, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   smallFuelPrefab: {fileID: 6154851928566309197, guid: f8463cb92f5961941864ba031efa8119, type: 3}
   isFuel: 0
   fuelAmount: 0.5
+  isSmallFuel: 0
   gridSize: 6
   gridPos: {x: 0, y: 0}
 --- !u!114 &-8176593236510427993

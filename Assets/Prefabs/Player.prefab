@@ -405,6 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fossilFuelLevel: 100
   passiveFuelRate: 0.3
+  maxFuelRate: 1
+  minFuelRate: 0.1
 --- !u!114 &6828065145900779051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,8 +527,11 @@ MonoBehaviour:
   maxIntensity: 5
   minInnerRadius: 0
   maxInnerRadius: 20
-  scrollSensitivity: 2.5
-  radiusSensitivity: 1
+  minOuterRadius: 0
+  maxOuterRadius: 100
+  scrollSensitivity: 15
+  scrollPercentage: 25
+  fuelManager: {fileID: -6441013026509004872}
 --- !u!1 &8548836932520487246
 GameObject:
   m_ObjectHideFlags: 0
