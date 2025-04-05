@@ -3,15 +3,22 @@ using System.Collections.Generic;
 
 public class TileGeneration : MonoBehaviour
 {
+    public static TileGeneration Instance;  // Singleton for easy access
+
     public GameObject chunkPrefab;
     public Camera mainCamera;
     
-    // These values are now determined dynamically:
     private float chunkSize;    // World size of the chunk prefab.
     private float chunkWorldSize; // We'll set this equal to chunkSize.
     
     private HashSet<Vector2Int> spawnedChunkPositions = new HashSet<Vector2Int>();
+    private HashSet<Vector2Int> minedChunkPositions = new HashSet<Vector2Int>(); // New set for mined chunks
     private Vector2Int lastCameraGridPosition;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -24,7 +31,17 @@ public class TileGeneration : MonoBehaviour
         lastCameraGridPosition = GetCameraChunkGridPosition();
         GenerateChunksAroundCamera();
     }
-
+    
+    void Update()
+    {
+        Vector2Int currentGridPos = GetCameraChunkGridPosition();
+        if (currentGridPos != lastCameraGridPosition)
+        {
+            GenerateChunksAroundCamera();
+            lastCameraGridPosition = currentGridPos;
+        }
+    }
+    
     float GetPrefabSize(GameObject prefab)
     {
         Renderer renderer = prefab.GetComponentInChildren<Renderer>();
@@ -35,7 +52,7 @@ public class TileGeneration : MonoBehaviour
         Debug.LogWarning("Prefab has no renderer to determine size.");
         return 1f;
     }
-
+    
     Vector2Int GetCameraChunkGridPosition()
     {
         Vector3 pos = mainCamera.transform.position;
@@ -44,25 +61,26 @@ public class TileGeneration : MonoBehaviour
             Mathf.FloorToInt(pos.y / chunkWorldSize)
         );
     }
-
+    
     void GenerateChunksAroundCamera()
     {
         float cameraHeight = 2f * mainCamera.orthographicSize;
         float cameraWidth = cameraHeight * mainCamera.aspect;
         Vector2 camPos = mainCamera.transform.position;
         int padding = 2;
-
+    
         int minChunkX = Mathf.FloorToInt((camPos.x - cameraWidth / 2) / chunkWorldSize) - padding;
         int maxChunkX = Mathf.CeilToInt((camPos.x + cameraWidth / 2) / chunkWorldSize) + padding;
         int minChunkY = Mathf.FloorToInt((camPos.y - cameraHeight / 2) / chunkWorldSize) - padding;
         int maxChunkY = Mathf.CeilToInt((camPos.y + cameraHeight / 2) / chunkWorldSize) + padding;
-
+    
         for (int chunkX = minChunkX; chunkX <= maxChunkX; chunkX++)
         {
             for (int chunkY = minChunkY; chunkY <= maxChunkY; chunkY++)
             {
                 Vector2Int chunkGridPos = new Vector2Int(chunkX, chunkY);
-                if (chunkY <= 0 && !spawnedChunkPositions.Contains(chunkGridPos))
+                // Only spawn if it's not already spawned and not marked as mined.
+                if (chunkY <= 0 && !spawnedChunkPositions.Contains(chunkGridPos) && !minedChunkPositions.Contains(chunkGridPos))
                 {
                     Vector3 spawnPos = new Vector3(
                         chunkX * chunkWorldSize,
@@ -71,15 +89,31 @@ public class TileGeneration : MonoBehaviour
                     );
                     GameObject chunk = Instantiate(chunkPrefab, spawnPos, Quaternion.identity);
                     chunk.transform.parent = transform;
+    
+                    // Set the grid coordinate on the chunk so it can notify us on destruction.
+                    Chunk chunkScript = chunk.GetComponent<Chunk>();
+                    if (chunkScript != null)
+                    {
+                        chunkScript.gridPos = chunkGridPos;
+                    }
+    
                     spawnedChunkPositions.Add(chunkGridPos);
                 }
             }
         }
     }
-
+    
+    // Called by a chunk when it is destroyed (mined)
+    public void RemoveChunkAt(Vector2Int gridPos)
+    {
+        spawnedChunkPositions.Remove(gridPos);
+        minedChunkPositions.Add(gridPos); // Mark this grid position as mined so it doesn't regenerate
+    }
+    
     public void ClearChunks()
     {
         spawnedChunkPositions.Clear();
+        minedChunkPositions.Clear();
         foreach (Transform child in transform)
         {
             if (child != transform)

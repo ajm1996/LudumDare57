@@ -4,15 +4,15 @@ public class Chunk : MonoBehaviour
 {
     public GameObject smallTilePrefab;
     private bool hasSubdivided = false;
-    public int gridSize = 5; // Number of subdivisions per side
+    public int gridSize = 10; // Or your desired subdivision count
+    public Vector2Int gridPos; // Assigned by TileGeneration
 
     public void Subdivide()
     {
         if (hasSubdivided) return;
         hasSubdivided = true;
 
-        // Get this chunk's size from its renderer.
-        float currentChunkSize = GetPrefabSize(gameObject); // The current chunk's world size.
+        float currentChunkSize = GetPrefabSize(gameObject);
         float smallTileSize = currentChunkSize / gridSize;
         Vector3 origin = transform.position - new Vector3(currentChunkSize / 2, currentChunkSize / 2, 0);
 
@@ -20,7 +20,6 @@ public class Chunk : MonoBehaviour
         {
             for (int y = 0; y < gridSize; y++)
             {
-                // Position each small tile centered in its grid cell.
                 Vector3 offset = new Vector3(x * smallTileSize + smallTileSize / 2, y * smallTileSize + smallTileSize / 2, 0);
                 Vector3 spawnPos = origin + offset;
                 GameObject tile = Instantiate(smallTilePrefab, spawnPos, Quaternion.identity);
@@ -39,5 +38,14 @@ public class Chunk : MonoBehaviour
         }
         Debug.LogWarning("Object has no renderer to determine size.");
         return 1f;
+    }
+
+    // Notify TileGeneration on destruction
+    void OnDestroy()
+    {
+        if (TileGeneration.Instance != null)
+        {
+            TileGeneration.Instance.RemoveChunkAt(gridPos);
+        }
     }
 }
