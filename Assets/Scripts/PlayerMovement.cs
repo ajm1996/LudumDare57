@@ -61,8 +61,24 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        // Set velocity with current Y velocity preserved
-        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
+        // Calculate target speed
+        float targetSpeed = horizontalInput * moveSpeed;
+        
+        // Calculate the difference between current and desired velocity
+        float speedDiff = targetSpeed - rb.linearVelocity.x;
+        
+        // Apply acceleration in the direction we want to move
+        float movement = speedDiff * 5f; // 5f is an acceleration factor
+        
+        // Apply the force
+        rb.AddForce(movement * Vector2.right);
+        
+        // Clamp the velocity to prevent excessive speed
+        float maxSpeed = moveSpeed;
+        rb.linearVelocity = new Vector2(
+            Mathf.Clamp(rb.linearVelocity.x, -maxSpeed, maxSpeed),
+            rb.linearVelocity.y
+        );
     }
 
     private void Jump()
