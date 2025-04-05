@@ -148,9 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dbdfc5b12076041a758a287f7a7721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallTilePrefab: {fileID: 6154851928566309197, guid: f8463cb92f5961941864ba031efa8119, type: 3}
+  smallTilePrefab: {fileID: 4208564745125425696, guid: 7a802ab6e4e33ca44ada42d96bfcc639, type: 3}
+  smallFuelPrefab: {fileID: 6154851928566309197, guid: f8463cb92f5961941864ba031efa8119, type: 3}
   isFuel: 1
   fuelAmount: 0.5
+  isSmallFuel: 0
   gridSize: 6
   gridPos: {x: 0, y: 0}
 --- !u!114 &7344901318717124549
