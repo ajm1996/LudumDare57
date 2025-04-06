@@ -71,13 +71,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        print("Grounded: " + collision.gameObject.name);
         isGrounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        print("Not Grounded: " + collision.gameObject.name);
         isGrounded = false;
     }
 
