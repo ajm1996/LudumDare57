@@ -595,7 +595,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1070659202
+--- !u!1001 &1090390603
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -609,15 +609,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.016464233
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.3088665
+      value: 17.18
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -646,14 +646,6 @@ PrefabInstance:
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9156326809884762253, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
-      propertyPath: fuelManager
-      value: 
-      objectReference: {fileID: 83488597}
-    - target: {fileID: 9156326809884762253, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
-      propertyPath: scrollSensitivity
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -694,7 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 6154851928566309197, guid: 029d7eb39aefe17438aadbc064ffd072, type: 3}
   fuelPrefab: {fileID: 6154851928566309197, guid: 830c96c45206c1243b7def846e9d42d6, type: 3}
-  mainCamera: {fileID: 519420031}
+  mainCamera: {fileID: 0}
   fuelChance: 0.001
 --- !u!4 &1740549938
 Transform:
@@ -717,5 +709,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 979236318}
   - {fileID: 1740549938}
-  - {fileID: 1070659202}
+  - {fileID: 1090390603}
   - {fileID: 488757370}

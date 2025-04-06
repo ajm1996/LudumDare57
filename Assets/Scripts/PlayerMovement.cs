@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,18 +11,34 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
+
+    [Header("Sprites")]
+    [SerializeField] private Sprite FacingCamera;
+    [SerializeField] private Sprite FacingLeft;
+    [SerializeField] private Sprite FacingRight;
     
     // Private variables
     private Rigidbody2D rb;
+    private AudioSource[] audiosource;
+    private SpriteRenderer spriteRenderer;
+    [SerializeField] private Transform MiningArmTransform;
+    [SerializeField] private SpriteRenderer MiningArmSprite;
+    [SerializeField] private Transform FlashlightArmTransform;
+    [SerializeField] private SpriteRenderer FlashlightArmSprite;
     private bool isGrounded;
     private float horizontalInput;
     private bool jumpPressed;
     private bool isFacingRight = true;
+    private float footstepTime = 0.8f;
 
     // Components caching
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        // Audiosource array positions
+        // 0 = Footstep 1 = DrillWindup
+        audiosource = GetComponents<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Input handling
@@ -51,6 +68,8 @@ public class PlayerController : MonoBehaviour
         
         // Flip the player sprite based on movement direction
         //Flip();
+
+        UpdateSprite();
     }
 
     private void CheckGrounded()
@@ -72,6 +91,18 @@ public class PlayerController : MonoBehaviour
         
         // Apply the force
         rb.AddForce(movement * Vector2.right);
+
+        // Track when to play footstep sounds when moving
+        if(rb.linearVelocityX != 0 && isGrounded)
+        {
+            footstepTime -= Time.deltaTime;
+
+            if(footstepTime < 0)
+            {
+                audiosource[0].Play();
+                footstepTime = 0.8f;
+            }
+        }
         
         // Clamp the velocity to prevent excessive speed
         float maxSpeed = moveSpeed;
@@ -100,6 +131,34 @@ public class PlayerController : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+        }
+    }
+
+    private void UpdateSprite()
+    {
+        if (rb.linearVelocityX == 0 && horizontalInput == 0)
+        {
+            spriteRenderer.sprite = FacingCamera;
+            MiningArmSprite.sortingOrder = 2;
+            FlashlightArmSprite.sortingOrder = 2;
+            MiningArmTransform.transform.localPosition = new Vector3(0.25f, 0.7f);            
+            FlashlightArmTransform.transform.localPosition = new Vector3(-0.25f, 0.7f);
+        }
+        else if(rb.linearVelocityX < 0 && horizontalInput < 0)
+        {
+            spriteRenderer.sprite = FacingLeft;
+            MiningArmSprite.sortingOrder = 2;
+            FlashlightArmSprite.sortingOrder = 0;
+            MiningArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+            FlashlightArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+        }
+        else if(horizontalInput > 0)
+        {
+            spriteRenderer.sprite = FacingRight;
+            MiningArmSprite.sortingOrder = 0;
+            FlashlightArmSprite.sortingOrder = 2;
+            MiningArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+            FlashlightArmTransform.transform.localPosition = new Vector3(0, 0.7f);
         }
     }
 
