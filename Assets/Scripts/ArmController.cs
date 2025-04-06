@@ -146,7 +146,6 @@ public class ArmController : MonoBehaviour
     
     private void UpdateDrillEffect()
     {
-        print("Updating drill effect: " + isFrozen);
         if (drillEffect != null)
         {
             if (isFrozen)
