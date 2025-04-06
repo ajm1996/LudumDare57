@@ -35,8 +35,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Audiosource array positions
-        // 0 = Footstep 1 = DrillWindup
         audiosource = GetComponents<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

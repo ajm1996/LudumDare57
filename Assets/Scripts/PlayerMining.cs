@@ -36,7 +36,7 @@ public class PlayerMining : MonoBehaviour
             wasLongPress = false;
 
             // Play drill windup noise
-            audioSources[1].Play();
+            audioSources[2].Play();
             
             // Don't immediately set isMining = true
             // Instead, capture the current direction if we're going to start mining
@@ -56,6 +56,7 @@ public class PlayerMining : MonoBehaviour
             {
                 // Stop mining if this was a long press
                 isMining = false;
+                audioSources[2].Stop();
             }
             else
             {
@@ -66,6 +67,10 @@ public class PlayerMining : MonoBehaviour
                 if (isMining)
                 {
                     UpdateMiningDirection();
+                }
+                else
+                {
+                    audioSources[2].Stop();
                 }
             }
         }
