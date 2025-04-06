@@ -108,9 +108,10 @@ public class TileGeneration : MonoBehaviour
                 // Only spawn if not already spawned and not mined.
                 if (chunkY <= 0 && !spawnedChunkPositions.Contains(chunkGridPos) && !minedChunkPositions.Contains(chunkGridPos))
                 {
+                    // Cast to int to avoid floating point precision issues
                     Vector3 spawnPos = new Vector3(
-                        chunkX * chunkWorldSize,
-                        chunkY * chunkWorldSize,
+                        (int) (chunkX * chunkWorldSize),
+                        (int) (chunkY * chunkWorldSize),
                         0f
                     );
 
@@ -149,7 +150,7 @@ public class TileGeneration : MonoBehaviour
 
                         // Adjust dungeon position so top-left corner aligns with spawnPos
                         dungeon.transform.position = new Vector3(
-                            spawnPos.x,
+                            spawnPos.x + (chunkWorldSize / 2),
                             spawnPos.y + (chunkWorldSize / 2),
                             spawnPos.z
                         );

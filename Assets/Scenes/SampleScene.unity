@@ -431,6 +431,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+--- !u!20 &1503705208 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5293560411308917916, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+  m_PrefabInstance: {fileID: 1090390603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1740549936
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,8 +467,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 6154851928566309197, guid: 029d7eb39aefe17438aadbc064ffd072, type: 3}
   fuelPrefab: {fileID: 6154851928566309197, guid: 830c96c45206c1243b7def846e9d42d6, type: 3}
-  mainCamera: {fileID: 0}
+  dungeonPrefab: {fileID: 353340645999087764, guid: c58876bfcbd877a4c9707f2771097b0a, type: 3}
+  mainCamera: {fileID: 1503705208}
   fuelChance: 0.001
+  dungeonChance: 0.0003
+  minDungeonDistance: 500
 --- !u!4 &1740549938
 Transform:
   m_ObjectHideFlags: 0
