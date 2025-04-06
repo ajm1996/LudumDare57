@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateSprite()
     {
-        if (rb.linearVelocityX == 0)
+        if (rb.linearVelocityX == 0 && horizontalInput == 0)
         {
             spriteRenderer.sprite = FacingCamera;
             MiningArmSprite.sortingOrder = 2;
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
             MiningArmTransform.transform.localPosition = new Vector3(0.25f, 0.7f);            
             FlashlightArmTransform.transform.localPosition = new Vector3(-0.25f, 0.7f);
         }
-        else if(rb.linearVelocityX < 0)
+        else if(rb.linearVelocityX < 0 && horizontalInput < 0)
         {
             spriteRenderer.sprite = FacingLeft;
             MiningArmSprite.sortingOrder = 2;
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
             MiningArmTransform.transform.localPosition = new Vector3(0, 0.7f);
             FlashlightArmTransform.transform.localPosition = new Vector3(0, 0.7f);
         }
-        else
+        else if(horizontalInput > 0)
         {
             spriteRenderer.sprite = FacingRight;
             MiningArmSprite.sortingOrder = 0;
