@@ -55,9 +55,6 @@ public class PlayerController : MonoBehaviour
     // Physics handling
     private void FixedUpdate()
     {
-        // Check if player is grounded
-        CheckGrounded();
-        
         // Move the player
         Move();
         
@@ -70,10 +67,14 @@ public class PlayerController : MonoBehaviour
         UpdateSprite();
     }
 
-    private void CheckGrounded()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        // Create a circle at groundCheck position to detect ground
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isGrounded = false;
     }
 
     private void Move()

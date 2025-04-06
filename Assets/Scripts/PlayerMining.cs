@@ -5,9 +5,11 @@ public class PlayerMining : MonoBehaviour
 {
     [SerializeField] private float miningDistance = 5f;
     [SerializeField] private float miningWidth = 1f;  // Width of the mining area
+    [SerializeField] private float timeToBreak = 0.5f;  // Time in seconds to break an object
+    public float health = 10f; //Just basic health amount
+    public float fossilFuelLevel = 100f;
     [SerializeField] private float mineCooldown = 0.25f;
     private float lastMineTime = -999f;
-    public float health = 10f; //Just basic health amount
     [SerializeField] private float timeToBreak = 0.1f;  // Time in seconds to break an object
     private bool isMining = false;
     private Vector3 miningDirection;
@@ -140,5 +142,8 @@ public class PlayerMining : MonoBehaviour
                 }
             }
         }
+    public void GatherFossilFuel(float fossilFuelAmount)
+    {
+        fossilFuelLevel = Math.Min(fossilFuelLevel + fossilFuelAmount, 100);
     }
 }

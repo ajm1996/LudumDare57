@@ -9,8 +9,9 @@ public class Chunk : MonoBehaviour
 
     public bool isSmallFuel = false;
     private bool hasSubdivided = false;
-    public int gridSize = 10;           // Number of subdivisions per side
+    public int gridSize = 6;           // Number of subdivisions per side
     public Vector2Int gridPos;          // Assigned by TileGeneration.
+    [SerializeField] private Sprite[] subdivisionSprites; // Array of sprites for subdivisions
 
     public void Subdivide()
     {
@@ -30,14 +31,26 @@ public class Chunk : MonoBehaviour
         float smallTileSize = currentChunkSize / gridSize;
         Vector3 origin = transform.position - new Vector3(currentChunkSize / 2, currentChunkSize / 2, 0);
 
-        for (int x = 0; x < gridSize; x++)
+        int count = 0;
+        
+        for (int y = 0; y < gridSize; y++)
         {
-            for (int y = 0; y < gridSize; y++)
+            for (int x = 0; x < gridSize; x++)
             {
                 Vector3 offset = new Vector3(x * smallTileSize + smallTileSize / 2, y * smallTileSize + smallTileSize / 2, 0);
                 Vector3 spawnPos = origin + offset;
                 GameObject tile = Instantiate(subdivisionPrefab, spawnPos, Quaternion.identity);
                 tile.transform.localScale = Vector3.one * smallTileSize;
+
+                // Apply a sprite from the array to the new tile
+                if (subdivisionSprites != null && subdivisionSprites.Length > 0)
+                {
+                    SpriteRenderer spriteRenderer = tile.GetComponent<SpriteRenderer>();
+                    if (spriteRenderer != null)
+                    {
+                        spriteRenderer.sprite = subdivisionSprites[count++];
+                    }
+                }
             }
         }
         Destroy(gameObject);
