@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,15 +14,20 @@ public class PlayerController : MonoBehaviour
     
     // Private variables
     private Rigidbody2D rb;
+    private AudioSource[] audiosource;
     private bool isGrounded;
     private float horizontalInput;
     private bool jumpPressed;
     private bool isFacingRight = true;
+    private float footstepTime = 0.8f;
 
     // Components caching
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        // Audiosource array positions
+        // 0 = Footstep 1 = DrillWindup
+        audiosource = GetComponents<AudioSource>();
     }
 
     // Input handling
@@ -72,6 +78,18 @@ public class PlayerController : MonoBehaviour
         
         // Apply the force
         rb.AddForce(movement * Vector2.right);
+
+        // Track when to play footstep sounds when moving
+        if(rb.linearVelocityX != 0 && isGrounded)
+        {
+            footstepTime -= Time.deltaTime;
+
+            if(footstepTime < 0)
+            {
+                audiosource[0].Play();
+                footstepTime = 0.8f;
+            }
+        }
         
         // Clamp the velocity to prevent excessive speed
         float maxSpeed = moveSpeed;

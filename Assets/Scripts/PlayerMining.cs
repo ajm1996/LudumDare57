@@ -16,12 +16,14 @@ public class PlayerMining : MonoBehaviour
     private float mouseDownTime;
     [SerializeField] private float longPressThreshold = 0.3f; // Time in seconds to consider a press as "long"
     private bool wasLongPress = false;
+    private AudioSource[] audioSources;
 
     void Start()
     {
         mainCamera = Camera.main;
         // TODO: move this to player controls later
         Physics2D.gravity = new Vector2(0, -25f); // higher grav accel to prevent "bouncy" look
+        audioSources = GetComponents<AudioSource>();
     }
 
     void Update()
@@ -32,6 +34,9 @@ public class PlayerMining : MonoBehaviour
             isHoldingMouse = true;
             mouseDownTime = Time.time;
             wasLongPress = false;
+
+            // Play drill windup noise
+            audioSources[1].Play();
             
             // Don't immediately set isMining = true
             // Instead, capture the current direction if we're going to start mining
@@ -46,7 +51,7 @@ public class PlayerMining : MonoBehaviour
             // Determine if this was a long press
             wasLongPress = Time.time - mouseDownTime >= longPressThreshold;
             isHoldingMouse = false;
-            
+
             if (wasLongPress)
             {
                 // Stop mining if this was a long press
@@ -73,27 +78,31 @@ public class PlayerMining : MonoBehaviour
             UpdateMiningDirection();
         }
 
-        if (isMining && Time.time >= lastMineTime + mineCooldown)
+        if (isMining)
         {
-            lastMineTime = Time.time;
-
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(
-                transform.position,
-                new Vector2(miningWidth, miningWidth),
-                0f,
-                miningDirection,
-                miningDistance
-            );
-
-            int processedTargets = 0;
-            foreach (RaycastHit2D hit in hits)
+            if(Time.time >= lastMineTime + mineCooldown)
             {
-            if (processedTargets >= 10) break;
+                lastMineTime = Time.time;
 
-                if (hit.collider != null && hit.collider.CompareTag("Breakable"))
+
+                RaycastHit2D[] hits = Physics2D.BoxCastAll(
+                    transform.position,
+                    new Vector2(miningWidth, miningWidth),
+                    0f,
+                    miningDirection,
+                    miningDistance
+                );
+
+                int processedTargets = 0;
+                foreach (RaycastHit2D hit in hits)
                 {
-                    StartCoroutine(DestroyAfterDelay(hit.collider.gameObject));
-                    processedTargets++;
+                if (processedTargets >= 10) break;
+
+                    if (hit.collider != null && hit.collider.CompareTag("Breakable"))
+                    {
+                        StartCoroutine(DestroyAfterDelay(hit.collider.gameObject));
+                        processedTargets++;
+                    }
                 }
             }
         }
@@ -120,6 +129,10 @@ public class PlayerMining : MonoBehaviour
             else
             {
                 Destroy(obj);
+                if(!audioSources[1].isPlaying)
+                {
+                    audioSources[1].Play();
+                }
             }
         }
     }
