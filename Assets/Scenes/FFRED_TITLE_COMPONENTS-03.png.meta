@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ac55cd36defa49746b3d76cc1ffe1787
+guid: 9214d0e736221c449baa8a6c3bd47d8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3149389169688070996
-    second: spark_0
+      213: 6284861930647420853
+    second: FFRED_TITLE_COMPONENTS-03_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spark_0
+      name: FFRED_TITLE_COMPONENTS-03_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 721
-        width: 4675
-        height: 3928
+        x: 289
+        y: 1232
+        width: 7292
+        height: 2232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca4b7418c3f1b44d0800000000000000
-      internalID: -3149389169688070996
+      spriteID: 5bf7d9690a0583750800000000000000
+      internalID: 6284861930647420853
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FFRED_TITLE_COMPONENTS-01_0: 1875331769685541080
+      FFRED_TITLE_COMPONENTS-03_0: 6284861930647420853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
