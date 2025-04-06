@@ -133,6 +133,9 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!61 &6322191628881353001
+  health: 10
+  fossilFuelLevel: 100
+--- !u!61 &-1617953423824671791
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
