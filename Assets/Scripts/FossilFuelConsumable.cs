@@ -19,7 +19,7 @@ public class FossilFuelConsumable : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<PlayerMining>().GatherFossilFuel(ContaintedFossilFuelAmount);
+            collision.GetComponent<FuelManager>().AddFuel(ContaintedFossilFuelAmount);
             Destroy(gameObject);
         }
     }
