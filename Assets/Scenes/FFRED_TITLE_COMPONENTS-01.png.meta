@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FFRED_TITLE_COMPONENTS-01_0: 1875331769685541080
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
