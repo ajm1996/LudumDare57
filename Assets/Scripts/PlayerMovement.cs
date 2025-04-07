@@ -195,4 +195,14 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
+
+    public void IncreaseSpeed(float amount)
+    {
+        moveSpeed += amount;
+    }
+
+    public void IncreaseJumpDistance(float amount)
+    {
+        jumpForce += amount;
+    }
 }

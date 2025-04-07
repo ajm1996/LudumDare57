@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: b8a696144b3ea0a408b5a0630031b694
+guid: 7fa56863099574247a5b1a4449f7945b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1378812329374229597
-    second: BlueTile_0
+      213: 1458253429931614191
+    second: Consumables_0
+  - first:
+      213: -7526724144147813300
+    second: Consumables_1
+  - first:
+      213: 7058654464667549777
+    second: Consumables_2
+  - first:
+      213: 4712264398650151583
+    second: Consumables_3
+  - first:
+      213: -6045823399046581544
+    second: Consumables_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 682
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,199 +151,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlueTile_0
+      name: Consumables_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1366
-        width: 682
-        height: 682
+        x: 160
+        y: 652
+        width: 444
+        height: 303
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d54a7402286822310800000000000000
-      internalID: 1378812329374229597
+      spriteID: fef9193b4c1cc3410800000000000000
+      internalID: 1458253429931614191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueTile_1
+      name: Consumables_1
       rect:
         serializedVersion: 2
-        x: 682
-        y: 1366
-        width: 682
-        height: 682
+        x: 769
+        y: 644
+        width: 327
+        height: 389
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c216fc25c97f2654c9e3223098668def
-      internalID: 730602757
+      spriteID: c4ca6b9e444bb8790800000000000000
+      internalID: -7526724144147813300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueTile_2
+      name: Consumables_2
       rect:
         serializedVersion: 2
-        x: 1364
-        y: 1366
-        width: 682
-        height: 682
+        x: 1255
+        y: 756
+        width: 353
+        height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 38cf30771c2310e43a0c541bbb285b5b
-      internalID: -154216558
+      spriteID: 1500cb656d065f160800000000000000
+      internalID: 7058654464667549777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueTile_3
+      name: Consumables_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 684
-        width: 682
-        height: 682
+        x: 73
+        y: 243
+        width: 505
+        height: 264
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fb5eebe1da830bb4589ef662af8a6000
-      internalID: -1933851939
+      spriteID: f9213410183556140800000000000000
+      internalID: 4712264398650151583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueTile_4
+      name: Consumables_4
       rect:
         serializedVersion: 2
-        x: 682
-        y: 684
-        width: 682
-        height: 682
+        x: 655
+        y: 200
+        width: 397
+        height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: acf2d7b6a5bed624e9de8b30a3d8a147
-      internalID: 492451668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_5
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 684
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e82f6d1f77680a941a74040b3693554d
-      internalID: 1907898143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c95a74dabcbbad4092db92df4a03990
-      internalID: 1620131820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_7
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 2
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f209e2b849ec1d846a63617e836cebdf
-      internalID: 24323057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_8
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 2
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e6661588037e9641b1bd8d89f662de8
-      internalID: -1384427962
+      spriteID: 8d2751596abe81ca0800000000000000
+      internalID: -6045823399046581544
       vertices: []
       indices: 
       edges: []
@@ -340,7 +264,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ca58ced29889a2d4f98eed2d43f760de
+    spriteID: 8383d1af4b86fe1418dae2540077ee09
     internalID: 0
     vertices: []
     indices: 
@@ -350,15 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BlueTile_0: 1378812329374229597
-      BlueTile_1: 730602757
-      BlueTile_2: -154216558
-      BlueTile_3: -1933851939
-      BlueTile_4: 492451668
-      BlueTile_5: 1907898143
-      BlueTile_6: 1620131820
-      BlueTile_7: 24323057
-      BlueTile_8: -1384427962
+      Consumables_0: 1458253429931614191
+      Consumables_1: -7526724144147813300
+      Consumables_2: 7058654464667549777
+      Consumables_3: 4712264398650151583
+      Consumables_4: -6045823399046581544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

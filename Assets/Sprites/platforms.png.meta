@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: b8a696144b3ea0a408b5a0630031b694
+guid: 9b025ad859d741c48a0b0039cc7f34a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1378812329374229597
-    second: BlueTile_0
+      213: 8483051222464998911
+    second: platforms_0
+  - first:
+      213: 1177557654815410699
+    second: platforms_1
+  - first:
+      213: -6327628624318395971
+    second: platforms_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 682
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlueTile_0
+      name: platforms_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1366
-        width: 682
-        height: 682
+        x: 257
+        y: 667
+        width: 817
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,184 +160,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d54a7402286822310800000000000000
-      internalID: 1378812329374229597
+      spriteID: ffd2876442ad9b570800000000000000
+      internalID: 8483051222464998911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueTile_1
+      name: platforms_1
       rect:
         serializedVersion: 2
-        x: 682
-        y: 1366
-        width: 682
-        height: 682
+        x: 30
+        y: 29
+        width: 556
+        height: 598
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c216fc25c97f2654c9e3223098668def
-      internalID: 730602757
+      spriteID: b0a80d5b276875010800000000000000
+      internalID: 1177557654815410699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueTile_2
+      name: platforms_2
       rect:
         serializedVersion: 2
-        x: 1364
-        y: 1366
-        width: 682
-        height: 682
+        x: 1021
+        y: 68
+        width: 686
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 38cf30771c2310e43a0c541bbb285b5b
-      internalID: -154216558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 684
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb5eebe1da830bb4589ef662af8a6000
-      internalID: -1933851939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_4
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 684
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acf2d7b6a5bed624e9de8b30a3d8a147
-      internalID: 492451668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_5
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 684
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e82f6d1f77680a941a74040b3693554d
-      internalID: 1907898143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c95a74dabcbbad4092db92df4a03990
-      internalID: 1620131820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_7
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 2
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f209e2b849ec1d846a63617e836cebdf
-      internalID: 24323057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueTile_8
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 2
-        width: 682
-        height: 682
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e6661588037e9641b1bd8d89f662de8
-      internalID: -1384427962
+      spriteID: db988e89a4fbf28a0800000000000000
+      internalID: -6327628624318395971
       vertices: []
       indices: 
       edges: []
@@ -340,7 +214,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ca58ced29889a2d4f98eed2d43f760de
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -350,15 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BlueTile_0: 1378812329374229597
-      BlueTile_1: 730602757
-      BlueTile_2: -154216558
-      BlueTile_3: -1933851939
-      BlueTile_4: 492451668
-      BlueTile_5: 1907898143
-      BlueTile_6: 1620131820
-      BlueTile_7: 24323057
-      BlueTile_8: -1384427962
+      platforms_0: 8483051222464998911
+      platforms_1: 1177557654815410699
+      platforms_2: -6327628624318395971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

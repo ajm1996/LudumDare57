@@ -8,6 +8,7 @@ public class FuelManager : MonoBehaviour
 
     [Header("Fuel Settings")]
     [SerializeField] public float fossilFuelLevel = 100f;
+    [SerializeField] public float fossilFuelMax = 100f;
     [SerializeField] public float passiveFuelRate = 0.3f;
     [SerializeField] public float maxFuelRate = 1f;
     [SerializeField] public float minFuelRate = 0.1f;
@@ -48,7 +49,7 @@ public class FuelManager : MonoBehaviour
 
     public void AddFuel(float fuelAmount)
     {
-        fossilFuelLevel = Mathf.Min(fossilFuelLevel + fuelAmount, 100);
+        fossilFuelLevel = Mathf.Min(fossilFuelLevel + fuelAmount, fossilFuelMax);
     }
 
     public void RemoveFuel(float fuelAmount)
@@ -61,7 +62,7 @@ public class FuelManager : MonoBehaviour
         if (batterySprites == null || batterySprites.Length < 6 || batterySpriteRenderer == null)
             return;
 
-        float fuelPercentage = fossilFuelLevel / 100f;
+        float fuelPercentage = fossilFuelLevel / fossilFuelMax;
 
         if (fuelPercentage > 0.8f)
         {
@@ -109,5 +110,11 @@ public class FuelManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         isBlinking = false;
+    }
+
+    public void IncreaseBatteryCapacity(float increasePercent)
+    {
+        fossilFuelMax += fossilFuelMax * (increasePercent / 100f);
+        fossilFuelLevel += fossilFuelMax * (increasePercent / 100f);
     }
 }

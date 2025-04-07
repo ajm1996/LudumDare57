@@ -168,4 +168,8 @@ public class PlayerMining : MonoBehaviour
             }
         }
     }
+    public void IncreaseMiningSpeed(float percent)
+    {
+        mineCooldown *= 1f / (1f + percent / 100f);
+    }
 }

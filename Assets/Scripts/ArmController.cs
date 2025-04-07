@@ -104,7 +104,6 @@ public class ArmController : MonoBehaviour
                     // Store current direction when freezing
                     frozenDirection = GetAimDirection();
                 }
-                UpdateDrillEffect(); // Update particle effect state
             }
 
             // Update arm rotation
