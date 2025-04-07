@@ -386,21 +386,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7116197561525967390, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: spinningDrillSprite
+      value: 
+      objectReference: {fileID: -6243005729883545574, guid: 68673cad3d5874c4bb970cc50d9ba57a, type: 3}
+    - target: {fileID: 7116197561525967390, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: spinningDrillSprite1
+      value: 
+      objectReference: {fileID: -6243005729883545574, guid: 68673cad3d5874c4bb970cc50d9ba57a, type: 3}
+    - target: {fileID: 7116197561525967390, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: spinningDrillSprite2
+      value: 
+      objectReference: {fileID: -9131609141298767491, guid: 68673cad3d5874c4bb970cc50d9ba57a, type: 3}
+    - target: {fileID: 7116197561525967390, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: nonSpinningDrillSprite
+      value: 
+      objectReference: {fileID: -7750878754359114242, guid: 68673cad3d5874c4bb970cc50d9ba57a, type: 3}
+    - target: {fileID: 7116197561525967390, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: miningArmSpriteRenderer
+      value: 
+      objectReference: {fileID: 1496614234}
     - target: {fileID: 7796396942808725014, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: textColor.a
       value: 0.72156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 7796396942808725014, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
-      propertyPath: textColor.b
-      value: 0.40392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 7796396942808725014, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
-      propertyPath: textColor.g
-      value: 0.9254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7796396942808725014, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
-      propertyPath: textColor.r
-      value: 0.99607843
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -447,6 +455,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+--- !u!212 &1496614234 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6356407348636109339, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+  m_PrefabInstance: {fileID: 1090390603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1503705208 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5293560411308917916, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
