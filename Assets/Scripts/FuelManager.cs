@@ -151,4 +151,18 @@ public class FuelManager : MonoBehaviour
         fossilFuelMax += fossilFuelMax * (increasePercent / 100f);
         fossilFuelLevel += fossilFuelMax * (increasePercent / 100f);
     }
+
+    // If entering a trigger with the tag "Lava", wait 0.1 seconds and set the fuel level to 0
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Lava"))
+        {
+            Invoke("SetFuelToZero", 0.1f);
+        }
+    }
+    private void SetFuelToZero()
+    {
+        fossilFuelLevel = 0;
+        SceneManager.LoadScene(0);
+    }
 }
