@@ -497,7 +497,7 @@ MonoBehaviour:
   fuelPrefab: {fileID: 6154851928566309197, guid: 830c96c45206c1243b7def846e9d42d6, type: 3}
   dungeonPrefab: {fileID: 353340645999087764, guid: c58876bfcbd877a4c9707f2771097b0a, type: 3}
   mainCamera: {fileID: 1503705208}
-  fuelChance: 0.001
+  fuelChance: 0.005
   dungeonChance: 0.0003
   minDungeonDistance: 500
 --- !u!4 &1740549938
