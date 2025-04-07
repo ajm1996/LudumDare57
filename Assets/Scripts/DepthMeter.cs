@@ -16,6 +16,9 @@ public class DepthMeter : MonoBehaviour
     [SerializeField] private float textAreaHeight = 0.35f;
     [SerializeField] private float fontSize = 5f;
     [SerializeField] private float textPadding = 0.05f; // Padding around text
+
+    
+    public float depth; // Padding around text
     
     private TextMeshPro depthText;
     private GameObject meterBackground;
@@ -133,7 +136,7 @@ public class DepthMeter : MonoBehaviour
 
         // Calculate depth based on initial Y position
         float currentY = playerTransform.position.y;
-        float depth = initialY - currentY + 17f; //Hardcoded +17 because that's how the player starts relative to meter (makes meter read 0m at start)
+        depth = initialY - currentY + 17f; //Hardcoded +17 because that's how the player starts relative to meter (makes meter read 0m at start)
         
         // Invert if needed (when going down increases depth)
         if (invertDepth)
