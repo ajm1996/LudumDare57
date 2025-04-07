@@ -6,6 +6,7 @@ public class ArmController : MonoBehaviour
     [SerializeField] private Transform armPivot; // The pivot point of the arm
     [SerializeField] private Transform playerTransform; // Reference to the player's transform
     [SerializeField] private Camera mainCamera; // Reference to the main camera
+    [SerializeField] private ParticleSystem drillEffect; // Particle effect for the drill
     
     [Header("Settings")]
     [SerializeField] private MouseButton freezeButton = MouseButton.Left; // Which mouse button freezes this arm
@@ -77,6 +78,7 @@ public class ArmController : MonoBehaviour
                         // Update frozen direction when freezing
                         frozenDirection = GetAimDirection();
                     }
+                    UpdateDrillEffect(); // Update particle effect state
                 }
             }
             
@@ -102,6 +104,7 @@ public class ArmController : MonoBehaviour
                     // Store current direction when freezing
                     frozenDirection = GetAimDirection();
                 }
+                UpdateDrillEffect(); // Update particle effect state
             }
 
             // Update arm rotation
@@ -141,6 +144,17 @@ public class ArmController : MonoBehaviour
         return direction.normalized;
     }
     
+    private void UpdateDrillEffect()
+    {
+        if (drillEffect != null)
+        {
+            if (isFrozen)
+                drillEffect.Play(); // Enable particle effect
+            else
+                drillEffect.Stop(); // Disable particle effect
+        }
+    }
+
     // Public method to reset the arm to unfrozen state
     public void ResetArm()
     {

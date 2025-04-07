@@ -382,9 +382,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3651372802523257955, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651372802523257955, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: ShapeModule.arc.value
+      value: 145.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651372802523257955, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651372802523257955, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061501722879141976, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4855206192709506753, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635465613881971824, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635465613881971824, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.062
       objectReference: {fileID: 0}
     - target: {fileID: 8819830081767931145, guid: b4625e24cce756a43a14e109cb0b609b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -469,7 +497,7 @@ MonoBehaviour:
   fuelPrefab: {fileID: 6154851928566309197, guid: 830c96c45206c1243b7def846e9d42d6, type: 3}
   dungeonPrefab: {fileID: 353340645999087764, guid: c58876bfcbd877a4c9707f2771097b0a, type: 3}
   mainCamera: {fileID: 1503705208}
-  fuelChance: 0.001
+  fuelChance: 0.005
   dungeonChance: 0.0003
   minDungeonDistance: 500
 --- !u!4 &1740549938

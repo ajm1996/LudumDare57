@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FuelManager : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class FuelManager : MonoBehaviour
     void Update()
     {
         fossilFuelLevel -= passiveFuelRate * Time.deltaTime;
+        if (fossilFuelLevel <= 0)
+        {
+            // Game over, restart the game
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void AddFuel(float fuelAmount)
