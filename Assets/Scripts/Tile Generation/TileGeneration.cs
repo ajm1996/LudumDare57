@@ -145,7 +145,11 @@ public class TileGeneration : MonoBehaviour
                             );
 
                             // Adjust position to account for the pivot being on the top-left
-                            spawnPos.x -= dungeonSize.x;
+                            dungeon.transform.position = new Vector3(
+                                dungeon.transform.position.x + dungeonSize.x,
+                                dungeon.transform.position.y,
+                                dungeon.transform.position.z
+                            );
                         }
 
                         // Adjust dungeon position so top-left corner aligns with spawnPos
@@ -156,6 +160,16 @@ public class TileGeneration : MonoBehaviour
                         );
 
                         ClearChunksForDungeon(dungeon.transform.position, dungeonSize, flipped);
+
+                        // Add points to dungeonPositions to ensure spacing
+                        float currentX = spawnPos.x;
+                        while (Mathf.Abs(currentX - spawnPos.x) < dungeonSize.x + minDungeonDistance)
+                        {
+                            print("Adding dungeon position: " + currentX + ", " + spawnPos.y);
+                            dungeonPositions.Add(new Vector2(currentX, spawnPos.y));
+                            currentX += flipped ? -minDungeonDistance : minDungeonDistance;
+                        }
+
                         dungeonPositions.Add(spawnPos);
                         continue;
                     }
