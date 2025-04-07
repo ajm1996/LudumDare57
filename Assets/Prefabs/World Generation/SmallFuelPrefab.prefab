@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -1938347265834254603}
   - component: {fileID: 3781641641007895609}
   - component: {fileID: 3595983385938641950}
-  - component: {fileID: -8897968703334117325}
   m_Layer: 0
   m_Name: SmallFuelPrefab
   m_TagString: Breakable
@@ -80,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.047034025, b: 1, a: 1}
+  m_Sprite: {fileID: 292526171667453007, guid: 6b75505cfaa1b79469e59e9416c071b7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 7, y: 7}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -209,15 +208,4 @@ MonoBehaviour:
   isSmallFuel: 1
   gridSize: 10
   gridPos: {x: 0, y: 0}
---- !u!114 &-8897968703334117325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154851928566309197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d98b1f07d166dc41bc5c2a903ed9b3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  subdivisionSprites: []
