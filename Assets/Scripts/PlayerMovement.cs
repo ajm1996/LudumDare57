@@ -135,32 +135,56 @@ public class PlayerController : MonoBehaviour
     }
 
     private void UpdateSprite()
+{
+    if (rb.linearVelocityX == 0 && horizontalInput == 0)
     {
-        if (rb.linearVelocityX == 0 && horizontalInput == 0)
+        spriteRenderer.sprite = FacingCamera;
+        MiningArmSprite.sortingOrder = 11;
+        FlashlightArmSprite.sortingOrder = 11;
+        MiningArmTransform.transform.localPosition = new Vector3(0.25f, 0.7f);            
+        FlashlightArmTransform.transform.localPosition = new Vector3(-0.25f, 0.7f);
+        
+        // Show depth meter text when facing camera
+        DepthMeter depthMeter = GetComponentInChildren<DepthMeter>();
+        if (depthMeter != null)
         {
-            spriteRenderer.sprite = FacingCamera;
-            MiningArmSprite.sortingOrder = 2;
-            FlashlightArmSprite.sortingOrder = 2;
-            MiningArmTransform.transform.localPosition = new Vector3(0.25f, 0.7f);            
-            FlashlightArmTransform.transform.localPosition = new Vector3(-0.25f, 0.7f);
-        }
-        else if(rb.linearVelocityX < 0 && horizontalInput < 0)
-        {
-            spriteRenderer.sprite = FacingLeft;
-            MiningArmSprite.sortingOrder = 2;
-            FlashlightArmSprite.sortingOrder = 0;
-            MiningArmTransform.transform.localPosition = new Vector3(0, 0.7f);
-            FlashlightArmTransform.transform.localPosition = new Vector3(0, 0.7f);
-        }
-        else if(horizontalInput > 0)
-        {
-            spriteRenderer.sprite = FacingRight;
-            MiningArmSprite.sortingOrder = 0;
-            FlashlightArmSprite.sortingOrder = 2;
-            MiningArmTransform.transform.localPosition = new Vector3(0, 0.7f);
-            FlashlightArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+            GameObject textObj = depthMeter.transform.Find("DepthMeterBackground/DepthText")?.gameObject;
+            if (textObj != null) textObj.SetActive(true);
         }
     }
+    else if(rb.linearVelocityX < 0 && horizontalInput < 0)
+    {
+        spriteRenderer.sprite = FacingLeft;
+        MiningArmSprite.sortingOrder = 11;
+        FlashlightArmSprite.sortingOrder = 0;
+        MiningArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+        FlashlightArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+        
+        // Hide depth meter text when facing left
+        DepthMeter depthMeter = GetComponentInChildren<DepthMeter>();
+        if (depthMeter != null)
+        {
+            GameObject textObj = depthMeter.transform.Find("DepthMeterBackground/DepthText")?.gameObject;
+            if (textObj != null) textObj.SetActive(false);
+        }
+    }
+    else if(horizontalInput > 0)
+    {
+        spriteRenderer.sprite = FacingRight;
+        MiningArmSprite.sortingOrder = 0;
+        FlashlightArmSprite.sortingOrder = 11;
+        MiningArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+        FlashlightArmTransform.transform.localPosition = new Vector3(0, 0.7f);
+        
+        // Hide depth meter text when facing right
+        DepthMeter depthMeter = GetComponentInChildren<DepthMeter>();
+        if (depthMeter != null)
+        {
+            GameObject textObj = depthMeter.transform.Find("DepthMeterBackground/DepthText")?.gameObject;
+            if (textObj != null) textObj.SetActive(false);
+        }
+    }
+}
 
     // Visualize the ground check radius in the editor
     private void OnDrawGizmosSelected()

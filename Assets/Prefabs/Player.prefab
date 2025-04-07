@@ -366,7 +366,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 11
   m_Sprite: {fileID: 8020767819372271602, guid: b92d98bbb909f0448ad03d803343ebd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -396,6 +396,63 @@ MonoBehaviour:
   freezeButton: 1
   rotationSpeed: 10
   longPressThreshold: 0.3
+--- !u!1 &3347903248955288614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2886112982562077125}
+  - component: {fileID: 4158164205862341519}
+  m_Layer: 0
+  m_Name: DepthMeter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2886112982562077125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347903248955288614}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.007, y: 0.52, z: 2}
+  m_LocalScale: {x: 0.083333336, y: 0.083333336, z: 0.11111112}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8819830081767931145}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4158164205862341519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347903248955288614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81c32710ada1fb40a8079a02b5f3e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 8819830081767931145}
+  startingYPosition: 0
+  invertDepth: 1
+  depthUnit: m
+  decimalPlaces: 0
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  backgroundSize: {x: 1, y: 0.3}
+  sortingLayerName: Level UI
+  orderInLayer: 10
+  textAreaWidth: 2
+  textAreaHeight: 2
+  fontSize: 7
+  textPadding: 0.05
 --- !u!1 &3534135343784726914
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +701,7 @@ Transform:
   - {fileID: 2547382806804934415}
   - {fileID: 2305182733470070276}
   - {fileID: 1625036860363415883}
+  - {fileID: 2886112982562077125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1296365428666961309
@@ -1546,7 +1604,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 11
   m_Sprite: {fileID: -5861489637131716926, guid: b92d98bbb909f0448ad03d803343ebd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
