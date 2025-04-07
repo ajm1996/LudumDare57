@@ -184,45 +184,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FFRED_FacingCamera
+      name: FFRED 1_0
       rect:
         serializedVersion: 2
-        x: 975
-        y: 2104
-        width: 511
-        height: 1549
+        x: 532
+        y: 1771
+        width: 513
+        height: 1548
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 031f039afbf994bc0800000000000000
-      internalID: -3798329165184175824
+      spriteID: 8057a8ab67d340244a523a5690559981
+      internalID: -857680205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FFRED_Left
+      name: FFRED 1_1
       rect:
         serializedVersion: 2
-        x: 1763
-        y: 2071
+        x: 1325
+        y: 1767
         width: 390
-        height: 1593
+        height: 1556
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2e33f6e3718818e80800000000000000
-      internalID: -8178105814915009566
+      spriteID: 3634ba6ffd3763247a4d8c6253634197
+      internalID: 2063261414
       vertices: []
       indices: 
       edges: []
@@ -231,19 +231,19 @@ TextureImporter:
       name: FFRED 1_2
       rect:
         serializedVersion: 2
-        x: 2285
-        y: 2828
+        x: 1847
+        y: 2491
         width: 222
         height: 850
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7d9051128ca2266a0800000000000000
+      spriteID: 045cb018797eba74b944b992180a1338
       internalID: -6457551876659017257
       vertices: []
       indices: 
@@ -253,108 +253,86 @@ TextureImporter:
       name: FFRED 1_3
       rect:
         serializedVersion: 2
-        x: 2747
-        y: 2516
+        x: 2308
+        y: 2178
         width: 222
-        height: 929
+        height: 930
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8cfc41936c58a5600800000000000000
+      spriteID: 404144c9063de0945b9d09e3c2d82117
       internalID: 457825398539210696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FFRED_Right
+      name: FFRED 1_4
       rect:
         serializedVersion: 2
-        x: 3045
-        y: 2105
-        width: 390
-        height: 1559
+        x: 2606
+        y: 1767
+        width: 389
+        height: 1560
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50b3e6c5efad290a0800000000000000
-      internalID: -6876192895034049787
+      spriteID: 54e9858d59fcc284bbb93dfb74076744
+      internalID: 1508000244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FFRED_Flashlight
+      name: FFRED 1_5
       rect:
         serializedVersion: 2
-        x: 3854
-        y: 2860
-        width: 227
-        height: 852
+        x: 3415
+        y: 2524
+        width: 228
+        height: 851
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b607a53d3a37ab2e0800000000000000
-      internalID: -2109246328006872981
+      spriteID: 7370d26aa1ca6fe45bf0d43c455ef59a
+      internalID: 1876199772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FFRED 1_6
+      name: FFRED 1_7
       rect:
         serializedVersion: 2
-        x: 682
-        y: 953
-        width: 184
-        height: 855
+        x: 1920
+        y: 1436
+        width: 391
+        height: 977
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2f7919bf5dd7f4f60800000000000000
-      internalID: 8020767819372271602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FFRED_MiningArm
-      rect:
-        serializedVersion: 2
-        x: 1231
-        y: 916
-        width: 179
-        height: 931
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c671240b3ec7aea0800000000000000
-      internalID: -5861489637131716926
+      spriteID: ba70efabedf817a4ca4f3586b1596c63
+      internalID: -972685498
       vertices: []
       indices: 
       edges: []
@@ -363,42 +341,20 @@ TextureImporter:
       name: FFRED 1_8
       rect:
         serializedVersion: 2
-        x: 2359
-        y: 1774
-        width: 390
+        x: 3026
+        y: 1438
+        width: 391
         height: 975
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4af10cbdf02320e70800000000000000
+      spriteID: 7f2b5e1a7250c8c4a8e583c9b34f50cd
       internalID: 9079874842425040804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FFRED 1_9
-      rect:
-        serializedVersion: 2
-        x: 3466
-        y: 1775
-        width: 390
-        height: 975
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a7a475e1e7194770800000000000000
-      internalID: 8595427622798010272
       vertices: []
       indices: 
       edges: []
@@ -407,19 +363,19 @@ TextureImporter:
       name: FFRED 1_10
       rect:
         serializedVersion: 2
-        x: 1693
-        y: 1405
-        width: 120
-        height: 339
+        x: 792
+        y: 579
+        width: 180
+        height: 932
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54de8bb58e93360f0800000000000000
+      spriteID: 220265c647e04c54081982a13e2a2943
       internalID: -1124991811778450107
       vertices: []
       indices: 
@@ -429,42 +385,20 @@ TextureImporter:
       name: FFRED 1_11
       rect:
         serializedVersion: 2
-        x: 1825
-        y: 1702
-        width: 6
-        height: 9
+        x: 1166
+        y: 1183
+        width: 141
+        height: 339
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3871ebd210a449740800000000000000
+      spriteID: d19089db3a486b74e84b3e279c297887
       internalID: 5157828842168915843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FFRED 1_12
-      rect:
-        serializedVersion: 2
-        x: 1671
-        y: 1686
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4760875c3199aaee0800000000000000
-      internalID: -1249017636445485452
       vertices: []
       indices: 
       edges: []
@@ -473,42 +407,20 @@ TextureImporter:
       name: FFRED 1_13
       rect:
         serializedVersion: 2
-        x: 1689
-        y: 1394
-        width: 10
-        height: 9
+        x: 243
+        y: 616
+        width: 184
+        height: 855
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 45415e13ab43aefc0800000000000000
+      spriteID: 64635c8e7e35e624a936a68500fce554
       internalID: -3464898989002517420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FFRED 1_14
-      rect:
-        serializedVersion: 2
-        x: 1754
-        y: 1209
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9877068f1e55bc270800000000000000
-      internalID: 8271799569619122057
       vertices: []
       indices: 
       edges: []
@@ -517,20 +429,130 @@ TextureImporter:
       name: FFRED 1_15
       rect:
         serializedVersion: 2
-        x: 1931
-        y: 453
-        width: 222
-        height: 929
+        x: 2184
+        y: 421
+        width: 184
+        height: 857
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9eb2cf78b6acb2770800000000000000
+      spriteID: 5788f118827c1a4478740db588b5ad03
       internalID: 8587179677703744489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FFRED 1_16
+      rect:
+        serializedVersion: 2
+        x: 2619
+        y: 419
+        width: 184
+        height: 857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75800c92ac6bd6840a7bec56c83b0750
+      internalID: 2065429797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FFRED 1_17
+      rect:
+        serializedVersion: 2
+        x: 3039
+        y: 421
+        width: 184
+        height: 855
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33ad1db14fc4b642ab8b3dc66ff84e5
+      internalID: 1966306804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FFRED 1_18
+      rect:
+        serializedVersion: 2
+        x: 3548
+        y: 421
+        width: 186
+        height: 857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394e7598588fa3847926b8b9a440fab7
+      internalID: 1614539123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FFRED 1_19
+      rect:
+        serializedVersion: 2
+        x: 3978
+        y: 421
+        width: 185
+        height: 857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea45c2431ecdc74883dbfc835fc8989
+      internalID: 84276174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FFRED 1_21
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 128
+        width: 222
+        height: 930
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d55a693b06dde4083925bdc8b3831f
+      internalID: -541951450
       vertices: []
       indices: 
       edges: []
@@ -549,22 +571,29 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      FFRED 1_0: -857680205
+      FFRED 1_1: 2063261414
       FFRED 1_10: -1124991811778450107
       FFRED 1_11: 5157828842168915843
       FFRED 1_12: -1249017636445485452
       FFRED 1_13: -3464898989002517420
       FFRED 1_14: 8271799569619122057
       FFRED 1_15: 8587179677703744489
+      FFRED 1_16: 2065429797
+      FFRED 1_17: 1966306804
+      FFRED 1_18: 1614539123
+      FFRED 1_19: 84276174
       FFRED 1_2: -6457551876659017257
+      FFRED 1_20: -209841300
+      FFRED 1_21: -541951450
+      FFRED 1_22: -1686532347
       FFRED 1_3: 457825398539210696
+      FFRED 1_4: 1508000244
+      FFRED 1_5: 1876199772
       FFRED 1_6: 8020767819372271602
+      FFRED 1_7: -972685498
       FFRED 1_8: 9079874842425040804
       FFRED 1_9: 8595427622798010272
-      FFRED_FacingCamera: -3798329165184175824
-      FFRED_Flashlight: -2109246328006872981
-      FFRED_Left: -8178105814915009566
-      FFRED_MiningArm: -5861489637131716926
-      FFRED_Right: -6876192895034049787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

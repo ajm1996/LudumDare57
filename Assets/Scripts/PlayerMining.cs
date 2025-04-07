@@ -18,6 +18,17 @@ public class PlayerMining : MonoBehaviour
     private bool wasLongPress = false;
     private AudioSource[] audioSources;
 
+    // Serialized fields for the mining arm sprites
+    [SerializeField] private Sprite spinningDrillSprite1;
+    [SerializeField] private Sprite spinningDrillSprite2;
+    [SerializeField] private Sprite nonSpinningDrillSprite;
+    [SerializeField] private SpriteRenderer miningArmSpriteRenderer;
+
+    // Timer for alternating drill sprites
+    [SerializeField] private float drillSpriteSwitchInterval = 0.1f; // Time in seconds to switch sprites
+    private float lastSpriteSwitchTime = 0f;
+    private bool useFirstDrillSprite = true;
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -78,12 +89,14 @@ public class PlayerMining : MonoBehaviour
             UpdateMiningDirection();
         }
 
+        // Update the mining arm sprite based on the mining state
+        UpdateMiningArmSprite();
+
         if (isMining)
         {
             if(Time.time >= lastMineTime + mineCooldown)
             {
                 lastMineTime = Time.time;
-
 
                 RaycastHit2D[] hits = Physics2D.BoxCastAll(
                     transform.position,
@@ -96,7 +109,7 @@ public class PlayerMining : MonoBehaviour
                 int processedTargets = 0;
                 foreach (RaycastHit2D hit in hits)
                 {
-                if (processedTargets >= 10) break;
+                    if (processedTargets >= 10) break;
 
                     if (hit.collider != null && hit.collider.CompareTag("Breakable"))
                     {
@@ -113,6 +126,25 @@ public class PlayerMining : MonoBehaviour
         Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = transform.position.z;
         miningDirection = (mouseWorldPos - transform.position).normalized;
+    }
+
+    private void UpdateMiningArmSprite()
+    {
+        if (isMining)
+        {
+            // Alternate between the two spinning drill sprites
+            if (Time.time >= lastSpriteSwitchTime + drillSpriteSwitchInterval)
+            {
+                lastSpriteSwitchTime = Time.time;
+                useFirstDrillSprite = !useFirstDrillSprite;
+            }
+
+            miningArmSpriteRenderer.sprite = useFirstDrillSprite ? spinningDrillSprite1 : spinningDrillSprite2;
+        }
+        else
+        {
+            miningArmSpriteRenderer.sprite = nonSpinningDrillSprite;
+        }
     }
 
     private IEnumerator DestroyAfterDelay(GameObject obj)
