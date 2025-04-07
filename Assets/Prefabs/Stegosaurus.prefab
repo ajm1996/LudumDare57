@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1111016170346156751}
   - component: {fileID: 2757592051338556849}
   - component: {fileID: 5620304406536389915}
+  - component: {fileID: 4250188879609110685}
   m_Layer: 0
   m_Name: Stegosaurus
   m_TagString: Untagged
@@ -134,9 +135,11 @@ MonoBehaviour:
   activeState: 0
   patrolDestination: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  audioSource: {fileID: 0}
   player: {fileID: 0}
   sightDistance: 100
   MikuBeam: {fileID: 1630785738997700958, guid: 71183262ede703e4a89c5ecdf8e11681, type: 3}
+  stepTime: 2
   idlePatrolTime: 1
   attackChargeTime: 3
   attackTime: 1
@@ -188,3 +191,100 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 60.167885, y: 28.95}
   m_EdgeRadius: 0
+--- !u!82 &4250188879609110685
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206252086510568795}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: acad3e8e4923767458ccd75f3bd2e84c, type: 3}
+  m_Resource: {fileID: 8300000, guid: acad3e8e4923767458ccd75f3bd2e84c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
