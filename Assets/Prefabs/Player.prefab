@@ -833,6 +833,11 @@ MonoBehaviour:
   health: 10
   timeToBreak: 0.001
   longPressThreshold: 0.3
+  spinningDrillSprite1: {fileID: -6243005729883545574, guid: 68673cad3d5874c4bb970cc50d9ba57a, type: 3}
+  spinningDrillSprite2: {fileID: -9131609141298767491, guid: 68673cad3d5874c4bb970cc50d9ba57a, type: 3}
+  nonSpinningDrillSprite: {fileID: -7750878754359114242, guid: 68673cad3d5874c4bb970cc50d9ba57a, type: 3}
+  miningArmSpriteRenderer: {fileID: 6356407348636109339}
+  drillSpriteSwitchInterval: 0.1
 --- !u!61 &5495218636702363063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -919,9 +924,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fossilFuelLevel: 100
-  passiveFuelRate: 0.3
+  passiveFuelRate: 0.6
   maxFuelRate: 1
-  minFuelRate: 0.1
+  minFuelRate: 0.5
   batterySprites:
   - {fileID: -3464898989002517420, guid: b92d98bbb909f0448ad03d803343ebd1, type: 3}
   - {fileID: 8587179677703744489, guid: b92d98bbb909f0448ad03d803343ebd1, type: 3}
@@ -1479,7 +1484,7 @@ MonoBehaviour:
   minOuterRadius: 0
   maxOuterRadius: 100
   scrollSensitivity: 15
-  scrollPercentage: 25
+  scrollPercentage: 20
   fuelManager: {fileID: -6441013026509004872}
 --- !u!1 &6257506776957174558
 GameObject:
