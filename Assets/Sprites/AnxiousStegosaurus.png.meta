@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 2a22c564b7b050d4c8291ec704c8b6d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8390809265089164299
+    second: AnxiousStegosaurus_0
+  - first:
+      213: -367875318628879510
+    second: AnxiousStegosaurus_1
+  - first:
+      213: -3712012464553001569
+    second: AnxiousStegosaurus_2
+  - first:
+      213: -4577634769308580256
+    second: AnxiousStegosaurus_3
+  - first:
+      213: -8445656534164564968
+    second: AnxiousStegosaurus_4
+  - first:
+      213: -3680380173466220506
+    second: AnxiousStegosaurus_5
+  - first:
+      213: -2154128412886985110
+    second: AnxiousStegosaurus_6
+  - first:
+      213: -5037441582884438348
+    second: AnxiousStegosaurus_7
+  - first:
+      213: -7455992713830926701
+    second: AnxiousStegosaurus_8
+  - first:
+      213: 3899105430761271253
+    second: AnxiousStegosaurus_9
+  - first:
+      213: 22494734518334776
+    second: AnxiousStegosaurus_10
+  - first:
+      213: 1121912752446323614
+    second: AnxiousStegosaurus_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_0
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1575
+        width: 143
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0432b7f194227470800000000000000
+      internalID: 8390809265089164299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_1
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1270
+        width: 1227
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a63fd77c85b05eaf0800000000000000
+      internalID: -367875318628879510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_2
+      rect:
+        serializedVersion: 2
+        x: 2765
+        y: 1270
+        width: 1203
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9dfe70a4584c7cc0800000000000000
+      internalID: -3712012464553001569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_3
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1423
+        width: 1111
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06682ef3e69f870c0800000000000000
+      internalID: -4577634769308580256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_4
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1542
+        width: 338
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8141a2211200bca80800000000000000
+      internalID: -8445656534164564968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_5
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1543
+        width: 142
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628c7225bb9acecc0800000000000000
+      internalID: -3680380173466220506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_6
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 481
+        width: 1203
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a669b4d1f9ffa12e0800000000000000
+      internalID: -2154128412886985110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_7
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 481
+        width: 1227
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be3463e199671ab0800000000000000
+      internalID: -5037441582884438348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_8
+      rect:
+        serializedVersion: 2
+        x: 3736
+        y: 770
+        width: 143
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396f43c512ef68890800000000000000
+      internalID: -7455992713830926701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_9
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 618
+        width: 1111
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df625e1bb76c1630800000000000000
+      internalID: 3899105430761271253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_10
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 738
+        width: 142
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835384487daef4000800000000000000
+      internalID: 22494734518334776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnxiousStegosaurus_11
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 737
+        width: 338
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b3b8644b5d19f00800000000000000
+      internalID: 1121912752446323614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AnxiousStegosaurus_0: 8390809265089164299
+      AnxiousStegosaurus_1: -367875318628879510
+      AnxiousStegosaurus_10: 22494734518334776
+      AnxiousStegosaurus_11: 1121912752446323614
+      AnxiousStegosaurus_2: -3712012464553001569
+      AnxiousStegosaurus_3: -4577634769308580256
+      AnxiousStegosaurus_4: -8445656534164564968
+      AnxiousStegosaurus_5: -3680380173466220506
+      AnxiousStegosaurus_6: -2154128412886985110
+      AnxiousStegosaurus_7: -5037441582884438348
+      AnxiousStegosaurus_8: -7455992713830926701
+      AnxiousStegosaurus_9: 3899105430761271253
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
