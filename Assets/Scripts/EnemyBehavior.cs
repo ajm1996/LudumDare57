@@ -11,10 +11,12 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private ActivityState activeState = ActivityState.Patrolling;
     [SerializeField] private UnityEngine.Vector3 patrolDestination = UnityEngine.Vector3.zero;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private Transform player;
     [SerializeField] private float sightDistance = 100f;
     [SerializeField] private Transform MikuBeam;
 
+    [SerializeField] private float stepTime = 2f;
     // Time Trackers
     [SerializeField] private float idlePatrolTime = 1f;
     [SerializeField] private float attackChargeTime = 3f;
@@ -30,6 +32,7 @@ public class EnemyBehavior : MonoBehaviour
         patrolDestination = transform.position;
         //find the player object
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -147,6 +150,24 @@ public class EnemyBehavior : MonoBehaviour
             Mathf.Clamp(rb.linearVelocity.x, -maxSpeed, maxSpeed),
             rb.linearVelocity.y
         );
+        if (rb.totalForce.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;            
+        }
+
+        if (stepTime > 0)
+        {
+            stepTime -= Time.deltaTime;
+        }
+        else
+        {
+            audioSource.Play();
+            stepTime = 2f;
+        }
     }
 
     void OnDrawGizmos()
