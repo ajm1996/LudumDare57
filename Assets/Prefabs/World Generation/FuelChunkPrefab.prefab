@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1938347265834254603}
   - component: {fileID: -2343871222701904183}
   - component: {fileID: 7344901318717124549}
+  - component: {fileID: 9197314606337944048}
   m_Layer: 0
   m_Name: FuelChunkPrefab
   m_TagString: Breakable
@@ -245,3 +246,15 @@ MonoBehaviour:
     - rid: 3551508446199939340
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
+--- !u!114 &9197314606337944048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154851928566309197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92966b3e62401e24a8572ac92fc14760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
