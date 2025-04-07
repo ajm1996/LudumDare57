@@ -28,6 +28,8 @@ public class EnemyBehavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         patrolDestination = transform.position;
+        //find the player object
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
