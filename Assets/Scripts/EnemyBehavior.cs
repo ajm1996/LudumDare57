@@ -11,7 +11,8 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private ActivityState activeState = ActivityState.Patrolling;
     [SerializeField] private UnityEngine.Vector3 patrolDestination = UnityEngine.Vector3.zero;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private AudioSource audioSource;
+    //Array values. 0 = Stomp, 1 = Charge, 2 = Beam
+    [SerializeField] private AudioSource[] audioSource;
     [SerializeField] private Transform player;
     [SerializeField] private float sightDistance = 100f;
     [SerializeField] private Transform MikuBeam;
@@ -32,7 +33,7 @@ public class EnemyBehavior : MonoBehaviour
         patrolDestination = transform.position;
         //find the player object
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -83,6 +84,7 @@ public class EnemyBehavior : MonoBehaviour
                 {
                     GetComponent<SpriteRenderer>().sprite = Attacking;
                     activeState = ActivityState.Attacking;
+                    audioSource[1].Play();
                 }
             }
 
@@ -105,6 +107,7 @@ public class EnemyBehavior : MonoBehaviour
                 UnityEngine.Vector3 direction = (patrolDestination - transform.position).normalized;
                 UnityEngine.Vector3 laserPoint = direction * 60f;
                 Instantiate(MikuBeam, transform.position + laserPoint, UnityEngine.Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
+                audioSource[2].Play();
                 attackChargeTime = 3f;
                 attackTime = 2f;
                 activeState = ActivityState.Coolingdown;
@@ -165,7 +168,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            audioSource.Play();
+            audioSource[0].Play();
             stepTime = 2f;
         }
     }
