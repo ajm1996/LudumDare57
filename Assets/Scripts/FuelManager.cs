@@ -13,6 +13,7 @@ public class FuelManager : MonoBehaviour
     [SerializeField] public float passiveFuelRate = 0.3f;
     [SerializeField] public float maxFuelRate = 1f;
     [SerializeField] public float minFuelRate = 0.1f;
+    [SerializeField] public GameOverManager gameOverManager;
 
     [Header("Battery Sprites")]
     [SerializeField] private Sprite[] batterySprites; // Array of 6 battery sprites
@@ -47,7 +48,7 @@ public class FuelManager : MonoBehaviour
         // Restart the game if fuel is depleted
         if (fossilFuelLevel <= 0)
         {
-            SceneManager.LoadScene(0);
+            gameOverManager.ShowGameOver(); // Show game over screen
         }
     }
 
@@ -163,6 +164,5 @@ public class FuelManager : MonoBehaviour
     private void SetFuelToZero()
     {
         fossilFuelLevel = 0;
-        SceneManager.LoadScene(0);
     }
 }
